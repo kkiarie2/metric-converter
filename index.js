@@ -2,7 +2,16 @@
 let numberValue = document.querySelector("#number");
 let metersContent = document.getElementById('length-content');
 let volumeContent = document.getElementById('volume-content');
-let massContent = document.getElementById('mass-content');
+let massContent = document.getElementById('mass-content')
+console.log(numberValue.value)
+let number = parseInt(numberValue.value)
+
+function defaultValue(){
+    let number = parseInt(numberValue.value)
+    converter(number);
+}
+defaultValue()
+
 
 
 
@@ -12,17 +21,13 @@ function changeListener(){
            let number = parseInt(event.target.value)
            console.log(number)
                 converter(number); 
-            } else if(event.target.value = NaN) {
-                numberValue.textContent = 1
-                let number = 1
-                converter(number); 
-            }else if(event.target.value = null) {
-                numberValue.textContent = 1
+            } else if((event.target.value = NaN) || (event.target.value = null) ){
+                numberValue.innerText = 1
                 let number = 1
                 converter(number); 
             }
             else{
-                numberValue.textContent = 1
+                numberValue.innerText = 1
                 let number = 1
                 converter(number); 
             }
@@ -63,4 +68,10 @@ function converter(number){
     volumeContent.innerText = litersKey + " " + "|" + " " + gallonsKey 
 
 }
+
+
+
+
+
+
 
