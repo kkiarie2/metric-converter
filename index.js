@@ -1,14 +1,45 @@
 
-let numberx = document.querySelector("#number");
-//let value = document.querySelector("#number").value|1;
+let numberValue = document.querySelector("#number");
 let metersContent = document.getElementById('length-content');
 let volumeContent = document.getElementById('volume-content');
 let massContent = document.getElementById('mass-content');
 
-numberx.addEventListener('change', function(event){
-    let number = parseInt(event.target.value)
-    converter(number);
-})
+
+
+function changeListener(){
+        numberValue.addEventListener('input', function(event){
+            if (event.target.value >=1){
+           let number = parseInt(event.target.value)
+           console.log(number)
+                converter(number); 
+            } else if(event.target.value = NaN) {
+                numberValue.textContent = 1
+                let number = 1
+                converter(number); 
+            }else if(event.target.value = null) {
+                numberValue.textContent = 1
+                let number = 1
+                converter(number); 
+            }
+            else{
+                numberValue.textContent = 1
+                let number = 1
+                converter(number); 
+            }
+            
+            
+           
+            
+        })
+        
+
+}
+changeListener();
+
+
+
+
+
 
 
 
